@@ -1,0 +1,185 @@
+body{
+	background-color: #eee;
+}
+
+.errors{
+	padding: 6px 15px;
+	border-radius: 12px;
+}
+
+.inputForm{
+	width: 100%;
+}
+
+.apiHref {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+}
+
+.currentTasks{
+	margin-top: 20px;
+}
+
+.list-group-item{
+  transition: background-color 1.25s, font-size 0.1s;
+}
+.list-group-item:hover{
+	background-color: #b1ffff;
+	font-size: 1.2em;
+}
+
+.outPutTask{
+	line-height: 35px;
+}
+.outPutTaskForm{
+	text-align: center;
+}
+
+/*api*/
+.api{
+/*	position: relative;
+    margin-top: 40px;
+    margin-right: 89px;*/
+}
+.nav-pills .nav-link:hover{
+    background: #e8e8e8ad;
+}
+.navbar{
+    justify-content: center;
+}
+.outPutTaskForm.outPutTaskFormApi{
+	text-align: left;
+}
+.fixed-right{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 208px;
+}
+.fixed-right li{
+	font-size: 1.4rem;
+}
+.btn-hamburger {
+    border: none;
+  	position: fixed;
+    top: 2%;
+    right: 5%;
+  	outline:none;
+  	width: 40px;
+  	height: 30px;
+  	display: block;
+  	background-color: transparent;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    cursor: pointer;
+}
+.btn-hamburger::after{
+	content: '';
+  	outline:none;
+  	width: 40px;
+  	height: 2px;
+  	display: block;
+  	background-color: #000;
+  	position: relative;
+  	left: -6px;
+  	top: 0px;
+
+}
+button:focus{
+	outline:none;
+}
+
+
+/*js slide out*/
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #eee; /* A background-color is required */
+  min-height: 100vh;
+  padding: 1% 10%;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.criss-cross{
+	position: absolute;
+	right: 17px;
+	top: 17px;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+}
+.criss-cross:before, .criss-cross:after {
+	position: absolute;
+	left: 9px;
+	content: '';
+	height: 24px;
+	width: 1px;
+	background-color: #727272;
+}
+.criss-cross:before {
+	transform: rotate(45deg);
+}
+.criss-cross:after {
+	transform: rotate(-45deg);
+}
+#menuClose{
+    /*debug1*/
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+}
+#menuClose .criss-cross{
+	right: 13px;
+    top: -2px;
+}
+#menuClose .criss-cross:before, #menuClose .criss-cross:after {
+    position: absolute;
+    left: 14px;
+    content: '';
+    height: 35px;
+    width: 3px;
+    background-color: #eee;
+}

@@ -1,0 +1,19 @@
+﻿composer create-project --prefer-dist laravel/laravel blog		//создоніе проекта
+
+php artisan serve												//запуск сервера
+
+php artisan make:migration create_articles_table --table=articles --create 	//созданіе міграції
+php artisan migrate												//міграція
+
+php artisan make:migration --table=users adds_api_token_to_users_table		//добавленія поля в уже существующу таблицю
+
+php artisan make:model Task 									//созданіе моделі
+
+php artisan make:controller TaskController 						//созданіе контролера
+
+php artisan make:auth											//созданіе авторізації
+
+php artisan make:model ToRead -mc								//migration, controller
+
+php artisan make:mail myMail --markdown=email					//созданіє пісьма
+php artisan vendor:publish --tag=laravel-mail					//настройка хедера і футера

@@ -24,7 +24,7 @@ Route::get('/', function () {
 //tasks
 Route::get('/tasks', 'TaskController@index')->name('tasks');
 Route::post('/tasks', 'TaskController@save')->name('addTask');
-Route::put('/tasks/{task}', 'TaskController@update')->name('updateTask');
+Route::put('/tasks/{id}', 'TaskController@update')->name('updateTask');
 Route::delete('/tasks/{task}', 'TaskController@delete')->name('deleteTask');
 
 
@@ -39,12 +39,18 @@ Route::get('/api', function () {
 //tobay
 Route::get('/tobays', 'TobayController@index')->name('toBays');
 Route::post('/tobays', 'TobayController@save')->name('addTobay');
-Route::put('/tobays/{tobay}', 'TobayController@update')->name('updateTobay');
+Route::put('/tobays/{id}', 'TobayController@update')->name('updateTobay');
 Route::delete('/tobays/{tobay}', 'TobayController@delete')->name('deleteTobay');
 
 //toread
 Route::get('/toreads', 'ToReadController@index')->name('toReads');
 Route::post('/toreads', 'ToReadController@save')->name('addToRead');
-Route::put('/toreads/{toread}', 'ToReadController@update')->name('updateToRead');
+Route::put('/toreads/{id}', 'ToReadController@update')->name('updateToRead');
 Route::delete('/toreads/{toRead}', 'ToReadController@delete')->name('deleteToRead');
+
+//totravel
+Route::get('/totravels', 'ToTravelController@index')->name('toTravel');
+Route::post('/totravels', 'ToTravelController@save')->name('addToTravel');
+Route::put('/totravels/{id}', 'ToTravelController@update')->name('updateToTravel');
+Route::delete('/totravels/{totravel}', 'ToTravelController@delete')->name('deleteToTravel');
 

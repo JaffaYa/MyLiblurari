@@ -21,16 +21,12 @@ document.addEventListener( "DOMContentLoaded", function( event ) {
 
 			return function(){
 				if(textActive){
-					// переробити
-					console.log(1);
-					text.className = 'text';
-					updateForm.className = 'updateForm text-active';
+					text.classList.remove('text-active');
+					updateForm.classList.add('text-active');
 					textActive = false;
 				}else{
-					// переробити
-					console.log(2);
-					text.className = 'text text-active';
-					updateForm.className = 'updateForm';
+					text.classList.add('text-active');
+					updateForm.classList.remove('text-active');
 					textActive = true;
 				}
 			}

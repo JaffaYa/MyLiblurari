@@ -7,18 +7,6 @@ document.addEventListener( "DOMContentLoaded", function( event ) {
 			var updateForm = self.parentElement.children["0"].children["1"];
 			var textActive = true;
 
-			for (let j = 0; j < text.classList.length; j++) {
-				if( text.classList[j] == 'text-active' ){
-					textActive = true;
-				}
-			}
-
-			for (let j = 0; j < updateForm.classList.length; j++) {
-				if( updateForm.classList[j] == 'text-active' ){
-					textActive = false;
-				}
-			}
-
 			return function(){
 				if(textActive){
 					text.classList.remove('text-active');

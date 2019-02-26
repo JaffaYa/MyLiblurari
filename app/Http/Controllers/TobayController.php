@@ -9,7 +9,7 @@ class TobayController extends Controller
 {
     //получити всі покупки
     public function index() {
-    	$tobays = Tobay::select(['id','name'])->get();
+    	$tobays = Tobay::select(['id','name'])->where('delete', 0)->get();
 		$title = "Купити";
 
     	return view('tobays')->with(['tobays' => $tobays, 'title' => $title]);
@@ -45,7 +45,10 @@ class TobayController extends Controller
 
 	//удалити покупку
 	public  function delete(Tobay $tobay) {
-		$tobay->delete();
+		// $tobay->delete();
+		$tobay->delete = 1;
+		$tobay->update();
+
 	    return redirect(route('toBays'));
 	}
 }

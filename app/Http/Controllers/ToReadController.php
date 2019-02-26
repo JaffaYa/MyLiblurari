@@ -8,18 +8,18 @@ use App\ToRead;
 class ToReadController extends Controller
 {
     //получити всі читання
-    public function index() {
-    	$toReads = ToRead::select(['id','name'])->get();
+	public function index() {
+		$toReads = ToRead::select(['id','name'])->where('delete', 0)->get();
 		$title = "Почитати";
 
-    	return view('toRead')->with(['toReads' => $toReads, 'title' => $title]);
+		return view('toRead')->with(['toReads' => $toReads, 'title' => $title]);
 	}
 
 	//сохранити читання
 	public function save(Request $reuest) {
 		$this->validate($reuest, [
-            "name" => 'required|max:2000'
-        ]);
+			"name" => 'required|max:2000'
+		]);
 
 		$toRead = new ToRead;
 
@@ -28,24 +28,27 @@ class ToReadController extends Controller
 
 		$toRead->save();;
 
-	    return redirect(route('toReads'));
+		return redirect(route('toReads'));
 	}
 
 	//обновити читання
 	public function update(Request $request, $id) {
 		$this->validate($request, [
-            "name" => 'required|max:2000'
-        ]);
+			"name" => 'required|max:2000'
+		]);
 		
-	    $toRead = ToRead::findOrFail($id);
-	    $toRead->update($request->all());
+		$toRead = ToRead::findOrFail($id);
+		$toRead->update($request->all());
 
-	    return redirect(route('toReads'));
+		return redirect(route('toReads'));
 	}
 
 	//удалити читання
 	public  function delete(ToRead $toRead) {
-		$toRead->delete();
-	    return redirect(route('toReads'));
+		// $toRead->delete();
+		$toRead->delete = 1;
+		$toRead->update();
+		
+		return redirect(route('toReads'));
 	}
 }

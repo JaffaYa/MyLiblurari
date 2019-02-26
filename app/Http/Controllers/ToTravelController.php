@@ -9,7 +9,7 @@ class ToTravelController extends Controller
 {
     //получити всі подорожі
     public function index() {
-    	$totravels = ToTravel::select(['id','name'])->get();
+    	$totravels = ToTravel::select(['id','name'])->where('delete', 0)->get();
 		$title = "Подорожі";
 
     	return view('totravels')->with(['totravels' => $totravels, 'title' => $title]);
@@ -45,7 +45,10 @@ class ToTravelController extends Controller
 
 	//удалити подорож
 	public  function delete(ToTravel $totravel) {
-		$totravel->delete();
+		// $totravel->delete();
+		$totravel->delete = 1;
+		$totravel->update();
+
 	    return redirect(route('toTravel'));
 	}
 }

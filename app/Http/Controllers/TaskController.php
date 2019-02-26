@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
 	//получити всі задачі
     public function index() {
-    	$tasks = Task::select(['id','name'])->get();
+    	$tasks = Task::select(['id','name'])->where('delete', 0)->get();
 		$title = "Tasks maneger";
 
     	return view('tasks')->with(['tasks' => $tasks, 'title' => $title]);
@@ -45,7 +45,10 @@ class TaskController extends Controller
 
 	//удалити задачу
 	public  function delete(Task $task) {
-		$task->delete();
+		// $task->delete();
+		$task->delete = 1;
+		$task->update();
+
 	    return redirect(route('tasks'));
 	}
 
@@ -54,7 +57,8 @@ class TaskController extends Controller
 
     //получити всі задачі
     public function apiIndex() {
-    	return response()->json(Task::all(), 200);
+    	// return response()->json(Task::all(), 200);
+    	return response()->json(Task::all()->where('delete', 0), 200);
 	}
 
 	//сохранити задачу
@@ -82,7 +86,9 @@ class TaskController extends Controller
 
 	//удалити задачу
 	public  function apiDelete(Task $task) {
-		$task->delete();
+		// $task->delete();
+		$task->delete = 1;
+		$task->update();
 
 	    return response()->json(null, 204);
 	}

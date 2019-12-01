@@ -21,7 +21,8 @@
 
     @if(count($tasks)>0)
 
-    <h2 class="currentTasks">Текущие задачи</h2>
+    <!-- <h2 class="currentTasks">Текущие задачи</h2> -->
+    <h2 class="currentTasks" style="font-size: 24px">Потрать 5 минут на задачу, еслі не йде то некст.</h2>
     <ul class="list-group">
         @foreach ($tasks as $task)
         <li class="list-group-item">

@@ -27,12 +27,13 @@ button:hover{
     text-align: left;
     font-size: 0;
 }
+
 .main-li-wraper{
     position: relative;
     display: inline-block;
     height: 46px;
     /*margin-left: -50px;*/
-    width: 300px;
+    width: 100%;
 }
 /*.main-li-wraper:last-child .list-group-item:hover{
     margin-right: 10px;
@@ -42,31 +43,35 @@ button:hover{
     height: 46px;
 }
 .main .list-group-item{
-    height: 46px;
-    width: 300px;
+    width: 100%;
     font-size: 20px;
 	padding: 0;
     z-index: 1;
-    transition: all 0.5s;
+    text-align: center;
+    transition: font-size 0.25s;
     position: absolute;
 }
 .main-li-wraper:hover .list-group-item{
     opacity: 0.7;
-    width: auto;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4.8rem;
+    font-size: 2.5rem;
     z-index: 2;
-    text-align: center;
 }
 .main .list-group-item>a{
     padding: 12px;
     display: block;
+    width: 100%;
 }
 .main a:hover{
 	text-decoration: none;
+}
+.main .list-group-item>a .text-block{
+    display: block;
+    width: 100%;
+    white-space: pre;
+    transition: width .8s ease;
+}
+.main-ul:hover .list-group-item>a .text-block{
+    width: 0;
 }
 
 /*под сторінки сторінка*/

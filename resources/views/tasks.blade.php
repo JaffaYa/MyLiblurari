@@ -7,7 +7,7 @@
         <div class="row inputForm">
             <div class="col-9 col-md-11">
                 <!-- <textarea class="form-control" name="name" rows="1" style="width: 100%" placeholder="Задача"></textarea> -->
-                <input class="form-control" name="name" rows="1" style="width: 100%" placeholder="Задача"/>
+                <input class="form-control" name="name" rows="1" style="width: 100%" placeholder="Задача" autocomplete="off"/>
             </div>
             <div class="col-3 col-md-1">
                 <button type="submit" class="btn btn-success">Забиндить</button>

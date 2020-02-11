@@ -26,4 +26,5 @@ document.addEventListener( "DOMContentLoaded", function( event ) {
 			chageButtons[i].addEventListener( "click", tumblerChange(chageButtons[i]));
 		}
 	})();//\\кнопка переклячатель для редактіровання форми
+
 });

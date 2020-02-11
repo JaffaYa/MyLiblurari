@@ -14,65 +14,28 @@ button:hover{
 }
 
 /*головна сторінка*/
-.main{
-    position: relative;
+.main {
+    display: flex;
+    align-items: center;
     height: 100vh;
 }
-.main-ul-wraper{
-    position: absolute;
-    width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-size: 0;
+.main .list-group{
+    text-align: center;
+}
+.main .main-li-wraper {
+    display: inline-block;
+    margin: 3.7em;
+}
+.main .list-group-item {
+    display: inline-block;
+    border-radius: 45%;
+    font-size: 1.8em;
+    padding: 0.7em 1.7em;
+}
+.main .list-group-item:hover{
+    font-size: 1.8em;
 }
 
-.main-li-wraper{
-    position: relative;
-    display: inline-block;
-    height: 46px;
-    /*margin-left: -50px;*/
-    width: 100%;
-}
-/*.main-li-wraper:last-child .list-group-item:hover{
-    margin-right: 10px;
-}*/
-.main-li-wraper:hover{
-    z-index: 3;
-    height: 46px;
-}
-.main .list-group-item{
-    width: 100%;
-    font-size: 20px;
-	padding: 0;
-    z-index: 1;
-    text-align: center;
-    transition: font-size 0.25s;
-    position: absolute;
-}
-.main-li-wraper:hover .list-group-item{
-    opacity: 0.7;
-    font-size: 2.5rem;
-    z-index: 2;
-}
-.main .list-group-item>a{
-    padding: 12px;
-    display: block;
-    width: 100%;
-}
-.main a:hover{
-	text-decoration: none;
-}
-.main .list-group-item>a .text-block{
-    display: block;
-    width: 100%;
-    white-space: pre;
-    transition: width .8s ease;
-}
-.main-ul:hover .list-group-item>a .text-block{
-    width: 0;
-}
 
 /*под сторінки сторінка*/
 .inputFormFixet{
